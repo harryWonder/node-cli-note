@@ -35,7 +35,7 @@ const YargsArgV = Yargs
   })
   .help().argv;
 const Command = YargsArgV._[0];
-console.log(Command);
+
 //Cli commands...
 if (Command === 'add')
   Notes.addNote( YargsArgV.title, YargsArgV.body );

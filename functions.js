@@ -13,7 +13,7 @@ Notes = JSON.parse(Notes);
 //Adding Notes...
 const addNote = ( title, body ) => {
   //Data properties...
-  const Data = `${UserName} Created A Note Titled: ${title} on ${Date}` + '\r';
+  const Data = `${UserName} Created A Note Titled: ${title} on ${Date}` + '\n';
   // Check if a note with this title exist...
   if (checkNotes(title)) {
     const Message = `
@@ -48,7 +48,7 @@ const addNote = ( title, body ) => {
 
 //Listing Notes...
 const listNotes = () => {
-  const Data = `${UserName} Fetched all Notes on ${Date}` + '\r';
+  const Data = `${UserName} Fetched all Notes on ${Date}` + '\n';
   //List all Notes...
   Notes.forEach( (Note) => {
     console.log(`Title: ${Note.title}`);
@@ -63,7 +63,7 @@ const listNotes = () => {
 
 //Fetching Notes...
 const fetchNote = ( title ) => {
-  const Data = `${UserName} Fetched A Note Titled: ${title} on ${Date}` + '\r';
+  const Data = `${UserName} Fetched A Note Titled: ${title} on ${Date}` + '\n';
   //Check if a note with the title already exist....
   if (checkNotes(title)) {
     let Note = searchNote(title);
@@ -79,7 +79,7 @@ const fetchNote = ( title ) => {
 
 //Deleting Notes...
 const deleteNote = ( title ) => {
-  const Data = `${UserName} Deleted A Note Titled: ${title} on ${Date}` + '\r';
+  const Data = `${UserName} Deleted A Note Titled: ${title} on ${Date}` + '\n';
 
   if (checkNotes( title )) {
     Notes = Notes.filter( (note) => {
@@ -111,7 +111,7 @@ const checkNotes = ( title ) => {
     return false;
 }
 
-//search a note by it's title...
+//search and return a note by it's title...
 const searchNote = ( title ) => {
   let Note = { };
   Notes.forEach( (note) => {
